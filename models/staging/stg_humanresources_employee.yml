@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_humanresources_employee
+    description: Staging table for employees.
+
+    columns:
+
+      - name: pk_employee
+        description: Primary key of the employee.
+        tests:
+          - unique
+          - not_null
+
+      - name: numero_identificacao
+        description: National identification number of the employee.
+        tests:
+          - not_null
+
+      - name: login_usuario
+        description: Login identifier of the employee.
+        tests:
+          - not_null
+
+      - name: cargo
+        description: Job title of the employee.
+
+      - name: dt_contratacao
+        description: Hiring date of the employee.
+        tests:
+          - not_null
+
+      - name: flg_funcionario_ativo
+        description: Flag indicating whether the employee is active.
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.

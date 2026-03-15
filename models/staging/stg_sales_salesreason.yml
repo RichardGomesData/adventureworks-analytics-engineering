@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_sales_salesreason
+    description: Staging da tabela sales_salesreason da Adventure Works.
+
+    columns:
+
+      - name: pk_salesreason
+        description: Chave primária do motivo de venda.
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_motivo_venda
+        description: Nome do motivo da venda.
+        tests:
+          - not_null
+
+      - name: tipo_motivo_venda
+        description: Tipo do motivo da venda.
+        tests:
+          - not_null
+
+      - name: ts_modificacao
+        description: Timestamp da última modificação do registro.

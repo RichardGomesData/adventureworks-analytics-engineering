@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_sales_customer
+
+    columns:
+
+      - name: pk_customer
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_person
+        description: Reference to the person table.
+
+      - name: fk_store
+        description: Reference to the store.
+
+      - name: fk_territory
+        description: Reference to the sales territory.

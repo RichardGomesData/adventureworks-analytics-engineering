@@ -9,18 +9,15 @@ renomeado as (
 
     select
 
-        cast(salesorderdetailid as int) as pk_pedido_detalhe
+        cast(salesorderdetailid as int) as pk_item_pedido
+
         , cast(salesorderid as int) as fk_pedido
-
-        , carriertrackingnumber as numero_rastreamento
-
-        , cast(orderqty as int) as quantidade_produto
         , cast(productid as int) as fk_produto
 
-        , cast(specialofferid as int) as fk_oferta_especial
+        , cast(orderqty as int) as quantidade
 
-        , cast(unitprice as decimal(18,2)) as vl_preco_unitario
-        , cast(unitpricediscount as decimal(18,4)) as vl_desconto_unitario
+        , cast(unitprice as decimal(18,2)) as preco_unitario
+        , cast(unitpricediscount as decimal(18,2)) as desconto
 
         , rowguid as guid_registro
         , cast(modifieddate as timestamp) as ts_modificacao

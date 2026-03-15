@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_production_product
+    description: Staging table for products.
+
+    columns:
+
+      - name: pk_product
+        description: Primary key of the product.
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_produto
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: numero_produto
+        description: Product number identifier.
+        tests:
+          - not_null
+
+      - name: fk_productsubcategory
+        description: Foreign key to product subcategory.
+
+      - name: fk_productmodel
+        description: Foreign key to product model.
+
+      - name: preco_lista
+        description: List price of the product.
+
+      - name: custo_padrao
+        description: Standard cost of the product.
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.

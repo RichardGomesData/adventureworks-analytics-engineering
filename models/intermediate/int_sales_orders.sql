@@ -16,7 +16,7 @@ joined as (
 
     select
 
-        order_details.pk_pedido_detalhe
+        order_details.pk_item_pedido as pk_item_pedido
         , orders.pk_pedido as fk_pedido
 
         , orders.fk_cliente
@@ -28,48 +28,9 @@ joined as (
 
         , order_details.fk_produto
 
-        , order_details.quantidade_produto
-
-        , order_details.vl_preco_unitario
-        , order_details.vl_desconto_unitario
-
-
-        -- valor bruto
-
-        , cast(
-            order_details.quantidade_produto
-            * order_details.vl_preco_unitario
-        as decimal(18,2)) as vl_bruto
-
-
-        -- valor desconto
-
-        , cast(
-            (
-                order_details.quantidade_produto
-                * order_details.vl_preco_unitario
-            )
-            * order_details.vl_desconto_unitario
-        as decimal(18,2)) as vl_desconto
-
-
-        -- valor liquido
-
-        , cast(
-            (
-                order_details.quantidade_produto
-                * order_details.vl_preco_unitario
-            )
-            -
-            (
-                (
-                    order_details.quantidade_produto
-                    * order_details.vl_preco_unitario
-                )
-                * order_details.vl_desconto_unitario
-            )
-        as decimal(18,2)) as vl_liquido
-
+        , order_details.quantidade
+        , order_details.preco_unitario
+        , order_details.desconto
 
     from order_details
 

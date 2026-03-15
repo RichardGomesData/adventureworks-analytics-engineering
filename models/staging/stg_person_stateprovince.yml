@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_person_stateprovince
+    description: Staging table for states and provinces.
+
+    columns:
+
+      - name: pk_stateprovince
+        description: Primary key of the state or province.
+        tests:
+          - unique
+          - not_null
+
+      - name: codigo_stateprovince
+        description: State or province code.
+        tests:
+          - not_null
+
+      - name: fk_countryregion
+        description: Foreign key referencing the country or region.
+        tests:
+          - not_null
+
+      - name: nome_estado
+        description: Name of the state or province.
+        tests:
+          - not_null
+
+      - name: fk_territory
+        description: Foreign key referencing the sales territory.
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.
