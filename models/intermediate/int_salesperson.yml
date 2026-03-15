@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: int_salesperson
+    description: Tabela intermediate que consolida informações de vendedores combinando dados de salesperson, employee e person.
+
+    columns:
+
+      - name: pk_salesperson
+        description: Identificador único do vendedor.
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_sales_salesperson')
+                field: pk_salesperson
+
+      - name: nome_completo
+        description: Nome completo do vendedor.
+
+      - name: cargo
+        description: Cargo do funcionário.
+
+      - name: dt_contratacao
+        description: Data de contratação do funcionário.
+
+      - name: fk_territory
+        description: Território de vendas associado ao vendedor.
+
+      - name: vl_meta_vendas
+        description: Meta de vendas atribuída ao vendedor.
+
+      - name: vl_bonus
+        description: Valor de bônus do vendedor.
+
+      - name: pct_comissao
+        description: Percentual de comissão do vendedor.
+
+      - name: vl_vendas_ano_atual
+        description: Valor total de vendas do vendedor no ano atual.
+
+      - name: vl_vendas_ano_anterior
+        description: Valor total de vendas do vendedor no ano anterior.

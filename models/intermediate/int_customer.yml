@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_customer
+    description: Tabela intermediate que consolida informações de clientes combinando dados de customer e person.
+
+    columns:
+
+      - name: pk_customer
+        description: Chave primária do cliente.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_person
+        description: Chave estrangeira para pessoa.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_person_person')
+                field: pk_person
+
+      - name: fk_store
+        description: Chave estrangeira para loja associada ao cliente.
+
+      - name: fk_territory
+        description: Território de vendas do cliente.
+
+      - name: nome_completo
+        description: Nome completo do cliente.
+
+      - name: tipo_pessoa
+        description: Tipo de pessoa (individual, store, etc).
