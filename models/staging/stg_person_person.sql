@@ -16,6 +16,14 @@ renomeado as (
         , middlename as nome_meio
         , lastname as sobrenome
         , suffix as sufixo_nome
+
+        , concat_ws(
+            ' ',
+            firstname,
+            middlename,
+            lastname
+        ) as nome_completo
+
         , emailpromotion as flg_promocao_email
         , additionalcontactinfo as info_contato_adicional
         , demographics as dados_demograficos
