@@ -5,10 +5,15 @@ with customers as (
 
 )
 
-select distinct
+select
 
     pk_customer
-    , nome_completo as nome_cliente
-    , tipo_pessoa as tipo_cliente
+
+    , nome_completo
+    , tipo_pessoa
+
+    , cidade
+    , nome_estado
+    , nome_pais
 
 from customers

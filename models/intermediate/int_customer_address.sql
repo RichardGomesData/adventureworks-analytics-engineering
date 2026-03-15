@@ -37,22 +37,22 @@ joined as (
 
     select
 
-        customers.pk_customer
+        customers.pk_customer,
 
-        , addresses.pk_address
+        addresses.pk_address,
 
-        , addresses.cidade
+        addresses.cidade,
 
-        , states.pk_stateprovince
-        , states.nome_estado
+        states.pk_stateprovince,
+        states.nome_estado,
 
-        , countries.pk_countryregion
-        , countries.nome_pais
+        countries.pk_countryregion,
+        countries.nome_pais
 
     from customers
 
     left join business_addresses
-        on customers.fk_person = business_addresses.fk_businessentity
+        on coalesce(customers.fk_person, customers.fk_store) = business_addresses.fk_businessentity
 
     left join addresses
         on business_addresses.fk_address = addresses.pk_address
