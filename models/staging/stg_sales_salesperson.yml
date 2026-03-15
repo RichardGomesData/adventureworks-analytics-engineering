@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_sales_salesperson
+
+    columns:
+
+      - name: pk_salesperson
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_territory
+        description: Território de vendas do vendedor.
+
+      - name: vl_bonus
+        description: Bônus do vendedor.
+
+      - name: pct_comissao
+        description: Percentual de comissão.
+
+      - name: ts_modificacao
+        description: Timestamp da última modificação.

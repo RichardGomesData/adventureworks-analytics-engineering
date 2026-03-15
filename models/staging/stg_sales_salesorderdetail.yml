@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_sales_salesorderdetail
+    description: Itens dos pedidos de venda.
+
+    columns:
+
+      - name: pk_item_pedido
+        description: Identificador da linha do pedido.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_pedido
+        description: Identificador do pedido.
+        tests:
+          - not_null
+
+      - name: fk_produto
+        description: Identificador do produto.
+        tests:
+          - not_null
+
+      - name: quantidade
+        description: Quantidade do produto no pedido.
+        tests:
+          - not_null
+
+      - name: preco_unitario
+        description: Preço unitário do produto.
+
+      - name: desconto
+        description: Percentual de desconto aplicado.
+
+      - name: ts_modificacao
+        description: Timestamp da última modificação.

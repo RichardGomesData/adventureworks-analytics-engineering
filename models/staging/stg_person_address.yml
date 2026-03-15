@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_person_address
+    description: Staging table for addresses.
+
+    columns:
+
+      - name: pk_address
+        description: Primary key of the address.
+        tests:
+          - unique
+          - not_null
+
+      - name: endereco_linha1
+        description: First line of the address.
+        tests:
+          - not_null
+
+      - name: cidade
+        description: City of the address.
+        tests:
+          - not_null
+
+      - name: fk_stateprovince
+        description: Foreign key referencing the state or province.
+        tests:
+          - not_null
+
+      - name: cep
+        description: Postal code.
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.

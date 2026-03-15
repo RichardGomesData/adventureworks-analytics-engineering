@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_sales_creditcard
+    description: Staging table for credit cards.
+
+    columns:
+
+      - name: pk_cartao_credito
+        description: Identificador do cartão de crédito.
+        tests:
+          - unique
+          - not_null
+
+      - name: tipo_cartao
+        description: Tipo do cartão de crédito.
+
+      - name: numero_cartao
+        description: Número mascarado do cartão.
+        tests:
+          - not_null
+
+      - name: mes_expiracao
+        description: Mês de expiração do cartão.
+
+      - name: ano_expiracao
+        description: Ano de expiração do cartão.
+
+      - name: ts_modificacao
+        description: Timestamp da última modificação.

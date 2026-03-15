@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_sales_salesorderheader
+    description: Tabela staging de pedidos de venda.
+
+    columns:
+
+      - name: pk_pedido
+        description: Identificador do pedido.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_cliente
+        description: Identificador do cliente.
+
+      - name: fk_vendedor
+        description: Identificador do vendedor.
+
+      - name: fk_cartao_credito
+        description: Identificador do cartão.
+
+      - name: dt_pedido
+        description: Data do pedido.
+        tests:
+          - not_null
+
+      - name: status_pedido
+        description: Status do pedido.
+
+      - name: ts_modificacao
+        description: Timestamp da última modificação.

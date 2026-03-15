@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_production_productsubcategory
+    description: Staging table for product subcategories.
+
+    columns:
+
+      - name: pk_productsubcategory
+        description: Primary key of the product subcategory.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_productcategory
+        description: Foreign key referencing the product category.
+        tests:
+          - not_null
+
+      - name: nome_subcategoria
+        description: Name of the product subcategory.
+        tests:
+          - not_null
+
+      - name: guid_registro
+        description: Unique row identifier.
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.

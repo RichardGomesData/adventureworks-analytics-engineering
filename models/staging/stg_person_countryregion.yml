@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_person_countryregion
+    description: Staging table for countries and regions.
+
+    columns:
+
+      - name: pk_countryregion
+        description: Primary key of the country or region.
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_pais
+        description: Name of the country or region.
+        tests:
+          - not_null
+
+      - name: ts_modificacao
+        description: Timestamp of the last modification.
