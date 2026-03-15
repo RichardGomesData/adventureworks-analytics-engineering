@@ -1,26 +1,69 @@
-with fonte_address as (
+with customers as (
 
     select *
-    from {{ source('adventure_works', 'person_address') }}
+    from {{ ref('stg_sales_customer') }}
 
 ),
 
-renomeado as (
+business_addresses as (
+
+    select *
+    from {{ ref('stg_person_businessentityaddress') }}
+
+),
+
+addresses as (
+
+    select *
+    from {{ ref('stg_person_address') }}
+
+),
+
+states as (
+
+    select *
+    from {{ ref('stg_person_stateprovince') }}
+
+),
+
+countries as (
+
+    select *
+    from {{ ref('stg_person_countryregion') }}
+
+),
+
+joined as (
 
     select
-        cast(addressid as int) as pk_address
-        , addressline1 as endereco_linha1
-        , addressline2 as endereco_linha2
-        , city as cidade
-        , cast(stateprovinceid as int) as fk_stateprovince
-        , postalcode as cep
-        , spatiallocation as localizacao_espacial
-        , rowguid as guid_registro
-        , cast(modifieddate as timestamp) as ts_modificacao
 
-    from fonte_address
+        customers.pk_customer
+
+        , addresses.pk_address
+
+        , addresses.cidade
+
+        , states.pk_stateprovince
+        , states.nome_estado
+
+        , countries.pk_countryregion
+        , countries.nome_pais
+
+    from customers
+
+    left join business_addresses
+        on customers.fk_person = business_addresses.fk_businessentity
+
+    left join addresses
+        on business_addresses.fk_address = addresses.pk_address
+
+    left join states
+        on addresses.fk_stateprovince = states.pk_stateprovince
+
+    left join countries
+        on states.fk_countryregion = countries.pk_countryregion
 
 )
 
 select *
-from renomeado
+from joined

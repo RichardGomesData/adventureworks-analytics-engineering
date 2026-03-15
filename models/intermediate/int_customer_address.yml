@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_customer_address
+    description: Tabela intermediate que relaciona clientes aos seus endereços e localizações geográficas.
+
+    columns:
+
+      - name: pk_customer
+        description: Chave primária do cliente.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_sales_customer')
+                field: pk_customer
+
+      - name: pk_address
+        description: Chave primária do endereço.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_person_address')
+                field: pk_address
+
+      - name: cidade
+        description: Cidade do endereço do cliente.
+
+      - name: pk_stateprovince
+        description: Identificador do estado/província.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_person_stateprovince')
+                field: pk_stateprovince

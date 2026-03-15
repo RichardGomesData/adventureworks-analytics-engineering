@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: int_sales_orders
+    description: Tabela intermediate que consolida pedidos e itens de pedido e serve como base para a fact table de vendas.
+
+    columns:
+
+      - name: pk_item_pedido
+        description: Chave primária do item do pedido.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_pedido
+        description: Identificador do pedido.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_sales_salesorderheader')
+                field: pk_pedido
+
+      - name: fk_cliente
+        description: Cliente associado ao pedido.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_sales_customer')
+                field: pk_customer
+                where: fk_cliente is not null
+
+      - name: fk_vendedor
+        description: Vendedor responsável pelo pedido.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_sales_salesperson')
+                field: pk_salesperson
+                where: fk_vendedor is not null
+
+      - name: fk_cartao_credito
+        description: Cartão de crédito utilizado no pagamento.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_sales_creditcard')
+                field: pk_cartao_credito
+                where: fk_cartao_credito is not null
+
+      - name: dt_pedido
+        description: Data do pedido.
+        tests:
+          - not_null
+
+      - name: status_pedido
+        description: Status do pedido.
+
+      - name: fk_produto
+        description: Produto vendido no item do pedido.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_production_product')
+                field: pk_product
+
+      - name: quantidade
+        description: Quantidade do produto no item do pedido.
+
+      - name: preco_unitario
+        description: Preço unitário do produto.
+
+      - name: desconto
+        description: Desconto aplicado ao item do pedido.

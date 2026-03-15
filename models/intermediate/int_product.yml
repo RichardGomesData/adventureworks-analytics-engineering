@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: int_product
+    description: Tabela intermediate que consolida informações de produtos, subcategorias e categorias.
+
+    columns:
+
+      - name: pk_product
+        description: Chave primária do produto.
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_production_product')
+                field: pk_product
+
+      - name: nome_produto
+        description: Nome do produto.
+
+      - name: numero_produto
+        description: Código do produto.
+
+      - name: cor
+        description: Cor do produto.
+
+      - name: pk_productsubcategory
+        description: Identificador da subcategoria do produto.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_production_productsubcategory')
+                field: pk_productsubcategory
+
+      - name: nome_subcategoria
+        description: Nome da subcategoria do produto.
+
+      - name: pk_productcategory
+        description: Identificador da categoria do produto.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_production_productcategory')
+                field: pk_productcategory
+
+      - name: nome_categoria
+        description: Nome da categoria do produto.

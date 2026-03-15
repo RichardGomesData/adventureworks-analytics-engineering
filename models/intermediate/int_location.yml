@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_location
+    description: Tabela intermediate que consolida informações geográficas de endereço, estado e país.
+
+    columns:
+
+      - name: pk_address
+        description: Chave primária do endereço.
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_person_address')
+                field: pk_address
+
+      - name: cidade
+        description: Cidade do endereço.
+
+      - name: pk_stateprovince
+        description: Identificador do estado/província.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_person_stateprovince')
+                field: pk_stateprovince
+
+      - name: nome_estado
+        description: Nome do estado ou província.
+
+      - name: pk_countryregion
+        description: Identificador do país.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_person_countryregion')
+                field: pk_countryregion
+
+      - name: nome_pais
+        description: Nome do país.
