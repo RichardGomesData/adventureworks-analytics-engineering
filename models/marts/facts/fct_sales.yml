@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: "Tabela fato contendo as vendas realizadas pela Adventure Works."
+
+    columns:
+
+      - name: pk_sales
+        description: "Chave primária da tabela fato."
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_product
+        description: "Chave estrangeira para dim_product."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: pk_product
+
+      - name: fk_customer
+        description: "Chave estrangeira para dim_customer."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: pk_customer
+
+      - name: fk_salesperson
+        description: "Chave estrangeira para dim_salesperson."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_salesperson')
+                field: pk_salesperson
+
+      - name: fk_date
+        description: "Chave estrangeira para dim_date."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: pk_date
+
+      - name: quantity
+        description: "Quantidade vendida."
+
+      - name: unit_price
+        description: "Preço unitário do produto."
+
+      - name: discount
+        description: "Percentual de desconto aplicado."
+
+      - name: gross_amount
+        description: "Valor bruto da venda antes do desconto."
+
+      - name: net_amount
+        description: "Valor líquido da venda após desconto."

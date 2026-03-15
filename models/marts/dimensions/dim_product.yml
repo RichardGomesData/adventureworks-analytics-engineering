@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Dimensão de produtos contendo atributos descritivos como nome, categoria e subcategoria."
+
+    columns:
+
+      - name: pk_product
+        description: "Chave primária da dimensão de produtos."
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_produto
+        description: "Nome do produto."
+
+      - name: numero_produto
+        description: "Código do produto."
+
+      - name: cor
+        description: "Cor do produto."
+
+      - name: nome_subcategoria
+        description: "Subcategoria do produto."
+
+      - name: nome_categoria
+        description: "Categoria do produto."
