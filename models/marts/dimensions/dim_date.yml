@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Dimensão de datas utilizada para análises temporais de vendas."
+
+    columns:
+
+      - name: pk_date
+        description: "Chave primária da dimensão de datas."
+        tests:
+          - unique
+          - not_null
+
+      - name: dia
+        description: "Dia do mês."
+
+      - name: mes
+        description: "Mês numérico."
+
+      - name: ano
+        description: "Ano."
+
+      - name: trimestre
+        description: "Trimestre do ano."
+
+      - name: nome_mes
+        description: "Nome do mês."
+
+      - name: nome_dia_semana
+        description: "Nome do dia da semana."
+
+      - name: semana_ano
+        description: "Número da semana no ano."
+
+      - name: fim_de_semana
+        description: "Indica se a data é sábado ou domingo."
+
+      - name: ano_mes
+        description: "Identificador de ano e mês no formato YYYY-MM."

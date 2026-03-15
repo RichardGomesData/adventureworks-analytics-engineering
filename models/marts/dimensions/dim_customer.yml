@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Dimensão de clientes contendo informações descritivas sobre os clientes da Adventure Works."
+
+    columns:
+
+      - name: pk_customer
+        description: "Chave primária da dimensão de clientes."
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_cliente
+        description: "Nome completo do cliente."
+
+      - name: tipo_cliente
+        description: "Tipo de cliente (Pessoa Física ou Loja/Empresa)."

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_sales_reason
+    description: "Dimensão contendo os motivos de venda associados aos pedidos."
+
+    columns:
+
+      - name: pk_sales_reason
+        description: "Chave primária da dimensão de motivos de venda."
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_motivo_venda
+        description: "Nome do motivo da venda."
+
+      - name: tipo_motivo_venda
+        description: "Tipo do motivo da venda."

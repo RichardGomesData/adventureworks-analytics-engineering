@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: "Dimensão contendo informações sobre os vendedores responsáveis pelas vendas."
+
+    columns:
+
+      - name: pk_salesperson
+        description: "Chave primária da dimensão de vendedores."
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_salesperson
+        description: "Nome completo do vendedor."
+
+      - name: cargo
+        description: "Cargo do funcionário."
+
+      - name: dt_contratacao
+        description: "Data de contratação do vendedor."

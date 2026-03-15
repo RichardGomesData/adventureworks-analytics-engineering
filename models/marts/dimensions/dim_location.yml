@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_location
+    description: "Dimensão de localização contendo cidade, estado e país dos endereços."
+
+    columns:
+
+      - name: pk_location
+        description: "Chave primária da dimensão de localização."
+        tests:
+          - unique
+          - not_null
+
+      - name: cidade
+        description: "Cidade do endereço."
+
+      - name: nome_estado
+        description: "Estado ou província."
+
+      - name: nome_pais
+        description: "País."
