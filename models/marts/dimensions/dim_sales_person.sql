@@ -1,15 +1,15 @@
-with salespersons as (
+with sales_persons as (
 
     select *
-    from {{ ref('int_salesperson') }}
+    from {{ ref('int_sales_person') }}
 
 )
 
 select distinct
 
-    pk_salesperson
+    pk_sales_person
     , nome_completo as nome_salesperson
     , cargo
     , dt_contratacao
 
-from salespersons
+from sales_persons

@@ -22,7 +22,7 @@ models:
         tests:
           - not_null
 
-      - name: fk_stateprovince
+      - name: fk_state_province
         description: Foreign key referencing the state or province.
         tests:
           - not_null

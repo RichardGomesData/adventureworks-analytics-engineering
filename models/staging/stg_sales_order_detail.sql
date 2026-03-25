@@ -1,4 +1,4 @@
-with fonte_salesorderdetail as (
+with fonte_sales_orderdetail as (
 
     select *
     from {{ source('adventure_works', 'sales_salesorderdetail') }}
@@ -22,7 +22,7 @@ renomeado as (
         , rowguid as guid_registro
         , cast(modifieddate as timestamp) as ts_modificacao
 
-    from fonte_salesorderdetail
+    from fonte_sales_orderdetail
 
 )
 

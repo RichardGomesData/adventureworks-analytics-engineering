@@ -8,7 +8,7 @@ with fonte_countryregion as (
 renomeado as (
 
     select
-        countryregioncode as pk_countryregion
+        countryregioncode as pk_country_region
         , name as nome_pais
         , cast(modifieddate as timestamp) as ts_modificacao
 

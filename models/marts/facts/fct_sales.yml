@@ -2,59 +2,64 @@ version: 2
 
 models:
   - name: fct_sales
-    description: "Tabela fato contendo as vendas realizadas pela Adventure Works."
+    description: Tabela fato de vendas no nível de item de pedido, contendo métricas financeiras e chaves para dimensões.
 
     columns:
 
       - name: pk_sales
-        description: "Chave primária da tabela fato."
         tests:
           - unique
           - not_null
 
       - name: fk_product
-        description: "Chave estrangeira para dim_product."
         tests:
+          - not_null
           - relationships:
               arguments:
                 to: ref('dim_product')
                 field: pk_product
 
       - name: fk_customer
-        description: "Chave estrangeira para dim_customer."
         tests:
+          - not_null
           - relationships:
               arguments:
                 to: ref('dim_customer')
                 field: pk_customer
 
-      - name: fk_salesperson
-        description: "Chave estrangeira para dim_salesperson."
+      - name: fk_sales_person
         tests:
           - relationships:
               arguments:
-                to: ref('dim_salesperson')
-                field: pk_salesperson
+                to: ref('dim_sales_person')
+                field: pk_sales_person
+
+      - name: fk_sales_reason
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_sales_reason')
+                field: pk_sales_reason
+              config:
+                where: fk_sales_reason is not null
+
+      - name: fk_credit_card
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_credit_card')
+                field: pk_cartao_credito
 
       - name: fk_date
-        description: "Chave estrangeira para dim_date."
         tests:
+          - not_null
           - relationships:
               arguments:
                 to: ref('dim_date')
                 field: pk_date
 
       - name: quantity
-        description: "Quantidade vendida."
-
       - name: unit_price
-        description: "Preço unitário do produto."
-
       - name: discount
-        description: "Percentual de desconto aplicado."
-
       - name: gross_amount
-        description: "Valor bruto da venda antes do desconto."
-
       - name: net_amount
-        description: "Valor líquido da venda após desconto."

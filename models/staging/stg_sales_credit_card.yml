@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_sales_creditcard
+  - name: stg_sales_credit_card
     description: Staging table for credit cards.
 
     columns:

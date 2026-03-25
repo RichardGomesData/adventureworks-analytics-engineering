@@ -1,5 +1,5 @@
 with
-    fonte_creditcard as (
+    fonte_credit_card as (
         select *
         from {{ source('adventure_works', 'sales_creditcard') }}
 
@@ -13,7 +13,7 @@ with
             , cast(expmonth as int) as mes_expiracao
             , cast(expyear as int) as ano_expiracao
             , cast(modifieddate as timestamp) as ts_modificacao
-        from fonte_creditcard
+        from fonte_credit_card
     )
 
 select *

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_sales_salesorderheader
+  - name: stg_sales_order_header
     description: Tabela staging de pedidos de venda.
 
     columns:

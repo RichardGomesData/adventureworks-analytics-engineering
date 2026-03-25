@@ -1,16 +1,16 @@
 version: 2
 
 models:
-  - name: stg_person_businessentityaddress
+  - name: stg_person_business_entity_address
     description: Bridge table linking business entities and addresses.
 
     tests:
       - unique:
-          column_name: "(fk_businessentity, fk_address, fk_addresstype)"
+          column_name: "(fk_business_entity, fk_address, fk_address_type)"
 
     columns:
 
-      - name: fk_businessentity
+      - name: fk_business_entity
         description: Foreign key referencing the business entity.
         tests:
           - not_null
@@ -20,7 +20,7 @@ models:
         tests:
           - not_null
 
-      - name: fk_addresstype
+      - name: fk_address_type
         description: Foreign key referencing the address type.
         tests:
           - not_null

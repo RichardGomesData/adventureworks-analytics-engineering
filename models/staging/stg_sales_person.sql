@@ -1,4 +1,4 @@
-with fonte_salesperson as (
+with fonte_sales_person as (
 
     select *
     from {{ source('adventure_works', 'sales_salesperson') }}
@@ -8,7 +8,7 @@ with fonte_salesperson as (
 renomeado as (
 
     select
-        cast(businessentityid as int) as pk_salesperson
+        cast(businessentityid as int) as pk_sales_person
         , cast(territoryid as int) as fk_territory
         , cast(salesquota as decimal(18,2)) as vl_meta_vendas
         , cast(bonus as decimal(18,2)) as vl_bonus
@@ -18,7 +18,7 @@ renomeado as (
         , rowguid as guid_registro
         , cast(modifieddate as timestamp) as ts_modificacao
 
-    from fonte_salesperson
+    from fonte_sales_person
 
 )
 

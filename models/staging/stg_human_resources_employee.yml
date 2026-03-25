@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_humanresources_employee
+  - name: stg_human_resources_employee
     description: Staging table for employees.
 
     columns:

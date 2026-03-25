@@ -2,30 +2,25 @@ version: 2
 
 models:
   - name: int_sales_reason
-    description: Tabela intermediate que relaciona pedidos aos motivos de venda.
 
     columns:
 
-      - name: fk_salesorder
-        description: Identificador do pedido associado ao motivo de venda.
+      - name: fk_sales_order
         tests:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_sales_salesorderheader')
+                to: ref('stg_sales_order_header')
                 field: pk_pedido
 
-      - name: pk_salesreason
-        description: Identificador do motivo de venda.
+      - name: pk_sales_reason
         tests:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_sales_salesreason')
-                field: pk_salesreason
+                to: ref('stg_sales_reason')
+                field: pk_sales_reason
 
       - name: nome_motivo_venda
-        description: Nome do motivo da venda.
 
       - name: tipo_motivo_venda
-        description: Tipo do motivo da venda.

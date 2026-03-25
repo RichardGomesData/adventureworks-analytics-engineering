@@ -19,24 +19,24 @@ models:
       - name: cidade
         description: Cidade do endereço.
 
-      - name: pk_stateprovince
+      - name: pk_state_province
         description: Identificador do estado/província.
         tests:
           - relationships:
               arguments:
-                to: ref('stg_person_stateprovince')
-                field: pk_stateprovince
+                to: ref('stg_person_state_province')
+                field: pk_state_province
 
       - name: nome_estado
         description: Nome do estado ou província.
 
-      - name: pk_countryregion
+      - name: pk_country_region
         description: Identificador do país.
         tests:
           - relationships:
               arguments:
-                to: ref('stg_person_countryregion')
-                field: pk_countryregion
+                to: ref('stg_person_country_region')
+                field: pk_country_region
 
       - name: nome_pais
         description: Nome do país.

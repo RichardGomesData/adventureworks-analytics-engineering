@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_person_person
+  - name: stg_person
     description: Staging table for persons.
 
     columns:

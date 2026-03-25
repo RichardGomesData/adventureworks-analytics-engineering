@@ -1,11 +1,11 @@
 version: 2
 
 models:
-  - name: stg_sales_salesperson
+  - name: stg_sales_person
 
     columns:
 
-      - name: pk_salesperson
+      - name: pk_sales_person
         tests:
           - unique
           - not_null

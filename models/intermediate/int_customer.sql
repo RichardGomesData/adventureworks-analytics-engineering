@@ -8,7 +8,7 @@ with customers as (
 persons as (
 
     select *
-    from {{ ref('stg_person_person') }}
+    from {{ ref('stg_person') }}
 
 ),
 

@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: stg_production_productcategory
+  - name: stg_production_product_category
     description: Staging table for product categories.
 
     columns:
 
-      - name: pk_productcategory
+      - name: pk_product_category
         description: Primary key of the product category.
         tests:
           - unique

@@ -1,18 +1,18 @@
 version: 2
 
 models:
-  - name: stg_production_productsubcategory
+  - name: stg_production_product_subcategory
     description: Staging table for product subcategories.
 
     columns:
 
-      - name: pk_productsubcategory
+      - name: pk_product_subcategory
         description: Primary key of the product subcategory.
         tests:
           - unique
           - not_null
 
-      - name: fk_productcategory
+      - name: fk_product_category
         description: Foreign key referencing the product category.
         tests:
           - not_null

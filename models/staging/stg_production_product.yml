@@ -22,10 +22,10 @@ models:
         tests:
           - not_null
 
-      - name: fk_productsubcategory
+      - name: fk_product_subcategory
         description: Foreign key to product subcategory.
 
-      - name: fk_productmodel
+      - name: fk_product_model
         description: Foreign key to product model.
 
       - name: preco_lista

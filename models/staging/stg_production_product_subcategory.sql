@@ -1,4 +1,4 @@
-with fonte_productsubcategory as (
+with fonte_product_subcategory as (
 
     select *
     from {{ source('adventure_works', 'production_productsubcategory') }}
@@ -8,12 +8,12 @@ with fonte_productsubcategory as (
 renomeado as (
 
     select
-        cast(productsubcategoryid as int) as pk_productsubcategory
-        , cast(productcategoryid as int) as fk_productcategory
+        cast(productsubcategoryid as int) as pk_product_subcategory
+        , cast(productcategoryid as int) as fk_product_category
         , name as nome_subcategoria
         , rowguid as guid_registro
         , cast(modifieddate as timestamp) as ts_modificacao
-    from fonte_productsubcategory
+    from fonte_product_subcategory
 
 )
 

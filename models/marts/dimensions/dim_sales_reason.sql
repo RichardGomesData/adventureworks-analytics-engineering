@@ -1,14 +1,21 @@
-with sales_reasons as (
+with base as (
 
     select *
     from {{ ref('int_sales_reason') }}
 
+),
+
+final as (
+
+    select distinct
+
+        pk_sales_reason,
+        nome_motivo_venda,
+        tipo_motivo_venda
+
+    from base
+
 )
 
-select distinct
-
-    pk_salesreason as pk_sales_reason
-    , nome_motivo_venda
-    , tipo_motivo_venda
-
-from sales_reasons
+select *
+from final

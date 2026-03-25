@@ -12,7 +12,7 @@ renomeado as (
         , addressline1 as endereco_linha1
         , addressline2 as endereco_linha2
         , city as cidade
-        , cast(stateprovinceid as int) as fk_stateprovince
+        , cast(stateprovinceid as int) as fk_state_province
         , postalcode as cep
         , spatiallocation as localizacao_espacial
         , rowguid as guid_registro

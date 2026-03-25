@@ -8,9 +8,9 @@ with fonte_businessentityaddress as (
 renomeado as (
 
     select
-        cast(businessentityid as int) as fk_businessentity
+        cast(businessentityid as int) as fk_business_entity
         , cast(addressid as int) as fk_address
-        , cast(addresstypeid as int) as fk_addresstype
+        , cast(addresstypeid as int) as fk_address_type
         , rowguid as guid_registro
         , cast(modifieddate as timestamp) as ts_modificacao
 
