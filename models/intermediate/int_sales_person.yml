@@ -1,20 +1,20 @@
 version: 2
 
 models:
-  - name: int_salesperson
+  - name: int_sales_person
     description: Tabela intermediate que consolida informações de vendedores combinando dados de salesperson, employee e person.
 
     columns:
 
-      - name: pk_salesperson
+      - name: pk_sales_person
         description: Identificador único do vendedor.
         tests:
           - unique
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_sales_salesperson')
-                field: pk_salesperson
+                to: ref('stg_sales_person')
+                field: pk_sales_person
 
       - name: nome_completo
         description: Nome completo do vendedor.

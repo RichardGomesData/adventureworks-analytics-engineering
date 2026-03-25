@@ -17,7 +17,7 @@ models:
         tests:
           - relationships:
               arguments:
-                to: ref('stg_person_person')
+                to: ref('stg_person')
                 field: pk_person
 
       - name: fk_store

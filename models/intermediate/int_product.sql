@@ -8,14 +8,14 @@ with products as (
 subcategories as (
 
     select *
-    from {{ ref('stg_production_productsubcategory') }}
+    from {{ ref('stg_production_product_subcategory') }}
 
 ),
 
 categories as (
 
     select *
-    from {{ ref('stg_production_productcategory') }}
+    from {{ ref('stg_production_product_category') }}
 
 ),
 
@@ -29,19 +29,19 @@ joined as (
         , products.numero_produto
         , products.cor
 
-        , subcategories.pk_productsubcategory
+        , subcategories.pk_product_subcategory
         , subcategories.nome_subcategoria
 
-        , categories.pk_productcategory
+        , categories.pk_product_category
         , categories.nome_categoria
 
     from products
 
     left join subcategories
-        on products.fk_productsubcategory = subcategories.pk_productsubcategory
+        on products.fk_product_subcategory = subcategories.pk_product_subcategory
 
     left join categories
-        on subcategories.fk_productcategory = categories.pk_productcategory
+        on subcategories.fk_product_category = categories.pk_product_category
 
 )
 

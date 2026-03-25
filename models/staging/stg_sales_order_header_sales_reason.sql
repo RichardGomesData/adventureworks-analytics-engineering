@@ -1,4 +1,4 @@
-with fonte_salesorderheadersalesreason as (
+with fonte_sales_order_header_sales_reason as (
 
     select *
     from {{ source('adventure_works', 'sales_salesorderheadersalesreason') }}
@@ -8,11 +8,11 @@ with fonte_salesorderheadersalesreason as (
 renomeado as (
 
     select
-        cast(salesorderid as int) as fk_salesorder
-        , cast(salesreasonid as int) as fk_salesreason
+        cast(salesorderid as int) as fk_sales_order
+        , cast(salesreasonid as int) as fk_sales_reason
         , cast(modifieddate as timestamp) as ts_modificacao
 
-    from fonte_salesorderheadersalesreason
+    from fonte_sales_order_header_sales_reason 
 
 )
 

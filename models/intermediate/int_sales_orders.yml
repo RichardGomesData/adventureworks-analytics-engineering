@@ -18,7 +18,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_sales_salesorderheader')
+                to: ref('stg_sales_order_header')
                 field: pk_pedido
 
       - name: fk_cliente
@@ -35,8 +35,8 @@ models:
         tests:
           - relationships:
               arguments:
-                to: ref('stg_sales_salesperson')
-                field: pk_salesperson
+                to: ref('stg_sales_person')
+                field: pk_sales_person
                 where: fk_vendedor is not null
 
       - name: fk_cartao_credito
@@ -44,7 +44,7 @@ models:
         tests:
           - relationships:
               arguments:
-                to: ref('stg_sales_creditcard')
+                to: ref('stg_sales_credit_card')
                 field: pk_cartao_credito
                 where: fk_cartao_credito is not null
 

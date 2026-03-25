@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_credit_card
+    description: "Tabela intermediária de cartões de crédito."
+
+    columns:
+
+      - name: pk_cartao_credito
+        description: "Chave primária do cartão de crédito."
+        tests:
+          - unique
+          - not_null
+
+      - name: tipo_cartao
+        description: "Tipo do cartão de crédito."
+        tests:
+          - not_null

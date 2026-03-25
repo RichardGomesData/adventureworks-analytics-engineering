@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: stg_sales_salesreason
+  - name: stg_sales_reason
     description: Staging da tabela sales_salesreason da Adventure Works.
 
     columns:
 
-      - name: pk_salesreason
+      - name: pk_sales_reason
         description: Chave primária do motivo de venda.
         tests:
           - unique

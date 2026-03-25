@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: stg_person_countryregion
+  - name: stg_person_country_region
     description: Staging table for countries and regions.
 
     columns:
 
-      - name: pk_countryregion
+      - name: pk_country_region
         description: Primary key of the country or region.
         tests:
           - unique

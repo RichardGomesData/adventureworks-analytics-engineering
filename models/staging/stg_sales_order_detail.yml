@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_sales_salesorderdetail
+  - name: stg_sales_order_detail
     description: Itens dos pedidos de venda.
 
     columns:

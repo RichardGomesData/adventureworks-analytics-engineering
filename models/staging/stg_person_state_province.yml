@@ -1,23 +1,23 @@
 version: 2
 
 models:
-  - name: stg_person_stateprovince
+  - name: stg_person_state_province
     description: Staging table for states and provinces.
 
     columns:
 
-      - name: pk_stateprovince
+      - name: pk_state_province
         description: Primary key of the state or province.
         tests:
           - unique
           - not_null
 
-      - name: codigo_stateprovince
+      - name: codigo_state_province
         description: State or province code.
         tests:
           - not_null
 
-      - name: fk_countryregion
+      - name: fk_country_region
         description: Foreign key referencing the country or region.
         tests:
           - not_null

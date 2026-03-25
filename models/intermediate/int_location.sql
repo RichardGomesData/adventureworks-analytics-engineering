@@ -8,14 +8,14 @@ with addresses as (
 states as (
 
     select *
-    from {{ ref('stg_person_stateprovince') }}
+    from {{ ref('stg_person_state_province') }}
 
 ),
 
 countries as (
 
     select *
-    from {{ ref('stg_person_countryregion') }}
+    from {{ ref('stg_person_country_region') }}
 
 ),
 
@@ -27,19 +27,19 @@ joined as (
 
         , addresses.cidade
 
-        , states.pk_stateprovince
+        , states.pk_state_province
         , states.nome_estado
 
-        , countries.pk_countryregion
+        , countries.pk_country_region
         , countries.nome_pais
 
     from addresses
 
     left join states
-        on addresses.fk_stateprovince = states.pk_stateprovince
+        on addresses.fk_state_province = states.pk_state_province
 
     left join countries
-        on states.fk_countryregion = countries.pk_countryregion
+        on states.fk_country_region = countries.pk_country_region
 
 )
 

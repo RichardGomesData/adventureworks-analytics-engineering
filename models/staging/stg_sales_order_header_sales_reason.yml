@@ -1,17 +1,17 @@
 version: 2
 
 models:
-  - name: stg_sales_salesorderheadersalesreason
+  - name: stg_sales_order_header_sales_reason
     description: Tabela de relacionamento entre pedidos de venda e motivos de venda.
 
     columns:
 
-      - name: fk_salesorder
+      - name: fk_sales_order
         description: Identificador do pedido de venda.
         tests:
           - not_null
 
-      - name: fk_salesreason
+      - name: fk_sales_reason
         description: Identificador do motivo da venda.
         tests:
           - not_null

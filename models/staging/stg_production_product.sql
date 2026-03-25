@@ -26,8 +26,8 @@ renomeado as (
         , productline as linha_produto
         , class as classe_produto
         , style as estilo_produto
-        , cast(productsubcategoryid as int) as fk_productsubcategory
-        , cast(productmodelid as int) as fk_productmodel
+        , cast(productsubcategoryid as int) as fk_product_subcategory
+        , cast(productmodelid as int) as fk_product_model
         , cast(sellstartdate as timestamp) as dt_inicio_venda
         , cast(sellenddate as timestamp) as dt_fim_venda
         , cast(discontinueddate as timestamp) as dt_descontinuacao

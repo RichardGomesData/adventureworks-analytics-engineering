@@ -25,24 +25,24 @@ models:
       - name: cor
         description: Cor do produto.
 
-      - name: pk_productsubcategory
+      - name: pk_product_subcategory
         description: Identificador da subcategoria do produto.
         tests:
           - relationships:
               arguments:
-                to: ref('stg_production_productsubcategory')
-                field: pk_productsubcategory
+                to: ref('stg_production_product_subcategory')
+                field: pk_product_subcategory
 
       - name: nome_subcategoria
         description: Nome da subcategoria do produto.
 
-      - name: pk_productcategory
+      - name: pk_product_category
         description: Identificador da categoria do produto.
         tests:
           - relationships:
               arguments:
-                to: ref('stg_production_productcategory')
-                field: pk_productcategory
+                to: ref('stg_production_product_category')
+                field: pk_product_category
 
       - name: nome_categoria
         description: Nome da categoria do produto.
