@@ -4,7 +4,9 @@ Projeto desenvolvido como parte da **Certificação em Engenharia de Analytics (
 
 ---
 
-# Acesso ao Dashboard Interativo: [Visualizar Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNjJiOWZiOWQtM2QzZi00MWQ2LWE1YzgtOTUzYzkwN2I1OWU0IiwidCI6IjcyOWI2MzAwLTQzMmMtNDUxZS1hMDRhLTQxZjBmNWY2NzY5NCJ9)
+# Acesso ao Dashboard Interativo: 
+
+[Visualizar Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNjJiOWZiOWQtM2QzZi00MWQ2LWE1YzgtOTUzYzkwN2I1OWU0IiwidCI6IjcyOWI2MzAwLTQzMmMtNDUxZS1hMDRhLTQxZjBmNWY2NzY5NCJ9)
 
 ---
 
