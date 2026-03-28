@@ -1,6 +1,6 @@
 # Adventure Works - Analytics Engineering Project
 
-Projeto desenvolvido como parte da **Certificação em Engenharia de Analytics (Indicium)**, com foco na construção de um pipeline moderno de dados utilizando o Modern Data Stack.
+Projeto desenvolvido como parte da **Certificação em Engenharia de Analytics (Indicium AI)**, com foco na construção de um pipeline moderno de dados utilizando o Modern Data Stack.
 
 ---
 
