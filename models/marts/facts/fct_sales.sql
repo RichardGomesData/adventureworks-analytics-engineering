@@ -10,7 +10,7 @@ final as (
     select
 
         pk_item_pedido as pk_sales
-
+        , fk_pedido as fk_pedido
         , fk_produto as fk_product
         , fk_cliente as fk_customer
         , fk_vendedor as fk_sales_person
